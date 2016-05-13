@@ -15,7 +15,7 @@ export class PolarAreaChartDemoComponent {
 
   // PolarArea
   public polarAreaChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales', 'Telesales', 'Corporate Sales'];
-  public polarAreaChartData:number[] = [300, 500, 100, 40, 120];
+  public polarAreaChartData:number[][] = [[300, 500, 100, 40, 120]];
   public polarAreaLegend:boolean = true;
 
   public polarAreaChartType:string = 'PolarArea';

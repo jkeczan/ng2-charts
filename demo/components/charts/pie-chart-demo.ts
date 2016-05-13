@@ -14,7 +14,7 @@ let template = require('./pie-chart-demo.html');
 export class PieChartDemoComponent {
   // Pie
   public pieChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
-  public pieChartData:number[] = [300, 500, 100];
+  public pieChartData:number[][] = [[300, 500, 100]];
   public pieChartType:string = 'Pie';
 
   public constructor() {

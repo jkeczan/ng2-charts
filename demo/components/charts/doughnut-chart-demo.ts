@@ -14,7 +14,7 @@ let template = require('./doughnut-chart-demo.html');
 export class DoughnutChartDemoComponent {
   // Doughnut
   public doughnutChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-  public doughnutChartData:number[] = [350, 450, 100];
+  public doughnutChartData:any = [[350, 450, 100]];
   public doughnutChartType:string = 'Doughnut';
 
   public constructor() {

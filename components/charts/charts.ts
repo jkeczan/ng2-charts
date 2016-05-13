@@ -11,7 +11,8 @@ declare var Chart:any;
   template: `<canvas></canvas>`,
   directives: [CORE_DIRECTIVES, NgClass]
 })
-export class ChartsComponent {}
+export class ChartsComponent {
+}
 
 @Component({
   selector: 'base-chart',
@@ -114,6 +115,7 @@ export class BaseChartComponent implements OnInit, OnDestroy, OnChanges {
     }];
 
   private element:ElementRef;
+
   public constructor(element:ElementRef) {
     this.element = element;
   }
@@ -196,27 +198,26 @@ export class BaseChartComponent implements OnInit, OnDestroy, OnChanges {
   public getChartBuilder(ctx:any, data:Array<any>, options:any):any {
     console.log('MODS MADE');
     options.data = data;
-    options.type = this.chartType.toLowerCase();
-    console.log(options);
+    if (this.chartType == "PolarArea") {
+      options.type = "polarArea";
+    } else {
+      options.type = this.chartType.toLowerCase();
+    }
+
+    console.log(this.chartType, options);
     return new Chart(ctx, options);
   }
 
   public getDataObject(label:string, value:any):any {
     if (this.chartType === 'Line'
       || this.chartType === 'Bar'
-      || this.chartType === 'Radar') {
-      return {
-        label: label,
-        data: value
-      };
-    }
-
-    if (this.chartType === 'Pie'
+      || this.chartType === 'Radar'
+      || this.chartType === 'Pie'
       || this.chartType === 'Doughnut'
       || this.chartType === 'PolarArea') {
       return {
         label: label,
-        value: value
+        data: value
       };
     }
 
@@ -226,16 +227,14 @@ export class BaseChartComponent implements OnInit, OnDestroy, OnChanges {
   public getChartData(labels:any, dataObject:any):any {
     if (this.chartType === 'Line'
       || this.chartType === 'Bar'
-      || this.chartType === 'Radar') {
+      || this.chartType === 'Radar'
+      || this.chartType === 'Pie'
+      || this.chartType === 'Doughnut'
+      || this.chartType === 'PolarArea') {
       return {
         labels: labels,
         datasets: dataObject
       };
-    }
-    if (this.chartType === 'Pie'
-      || this.chartType === 'Doughnut'
-      || this.chartType === 'PolarArea') {
-      return dataObject;
     }
   }
 
