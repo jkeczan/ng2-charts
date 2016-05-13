@@ -194,7 +194,11 @@ export class BaseChartComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   public getChartBuilder(ctx:any, data:Array<any>, options:any):any {
-    return new Chart(ctx)[this.chartType](data, options);
+    console.log('MODS MADE');
+    options.data = data;
+    options.type = this.chartType.toLowerCase();
+    console.log(options);
+    return new Chart(ctx, options);
   }
 
   public getDataObject(label:string, value:any):any {
