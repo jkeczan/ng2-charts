@@ -16,14 +16,56 @@ let src = 'https://github.com/valor-software/ng2-charts/blob/master/components/c
 let doc = require('../../components/charts/readme.md');
 
 let chartDesc:Array<any> = [
+  {
+    heading: 'Line Chart',
+    tag: 'line-chart-demo',
+    id: 'lineChart',
+    ts: require('!!prismjs?lang=typescript!./charts/line-chart-demo.ts'),
+    html: require('!!prismjs?lang=markup!./charts/line-chart-demo.html')
+  },
+  {
+    heading: 'Bar Chart',
+    tag: 'bar-chart-demo',
+    id: 'barChart',
+    ts: require('!!prismjs?lang=typescript!./charts/bar-chart-demo.ts'),
+    html: require('!!prismjs?lang=markup!./charts/bar-chart-demo.html')
+  },
+  {
+    heading: 'Doughnut Chart',
+    tag: 'doughnut-chart-demo',
+    id: 'doughnutChart',
+    ts: require('!!prismjs?lang=typescript!./charts/doughnut-chart-demo.ts'),
+    html: require('!!prismjs?lang=markup!./charts/doughnut-chart-demo.html')
+  }
+  ,
+  {
+    heading: 'Radar Chart',
+    tag: 'radar-chart-demo',
+    id: 'radarChart',
+    ts: require('!!prismjs?lang=typescript!./charts/radar-chart-demo.ts'),
+    html: require('!!prismjs?lang=markup!./charts/radar-chart-demo.html')
 
-
+  },
+  {
+    heading: 'Pie Chart',
+    tag: 'pie-chart-demo',
+    id: 'pieChart',
+    ts: require('!!prismjs?lang=typescript!./charts/pie-chart-demo.ts'),
+    html: require('!!prismjs?lang=markup!./charts/pie-chart-demo.html')
+  },
   {
     heading: 'Polar Area Chart',
     tag: 'polar-area-chart-demo',
     id: 'polarAreaChart',
     ts: require('!!prismjs?lang=typescript!./charts/polar-area-chart-demo.ts'),
     html: require('!!prismjs?lang=markup!./charts/polar-area-chart-demo.html')
+  },
+  {
+    heading: 'Dynamic Chart',
+    tag: 'base-chart-demo',
+    id: 'baseChart',
+    ts: require('!!prismjs?lang=typescript!./charts/base-chart-demo.ts'),
+    html: require('!!prismjs?lang=markup!./charts/base-chart-demo.html')
   }
 ];
 

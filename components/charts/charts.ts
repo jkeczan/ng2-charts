@@ -198,8 +198,8 @@ export class BaseChartComponent implements OnInit, OnDestroy, OnChanges {
   public getChartBuilder(ctx:any, data:Array<any>, options:any):any {
     console.log('MODS MADE');
     options.data = data;
-    if (this.chartType == "PolarArea") {
-      options.type = "polarArea";
+    if (this.chartType === 'PolarArea') {
+      options.type = 'polarArea';
     } else {
       options.type = this.chartType.toLowerCase();
     }
